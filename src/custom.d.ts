@@ -1,7 +1,6 @@
-declare namespace Express {
+declare namespace Express { // TODO: check if it is better to use env variables
   export interface Request {
     logTags?: {
-      country?: string;
       endPoint?: string;
       userAgent?: string;
       http?: {

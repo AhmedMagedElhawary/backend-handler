@@ -1,17 +1,15 @@
 import { AppError } from "../framework/appError";
-
-import { Handler } from 'express';
-import { nextTick } from "process";
+import { Request, Response, NextFunction } from 'express';
 
 //TODO: read about validation
-export const path1Validator: Handler = (req, res, next) => {
-  // const {isValid} = req.params.
-  const isValid= true;
+export const path1Validator = (_req: Request, _res: Response, next:NextFunction) => {
+    // const {isValid} = req.params.
+    const isValid= true;
 
-  if (!isValid) {
-    throw AppError.badRequest(
-      'invalid_Payload',
-    );
-  }
-  next();
+    if (!isValid) {
+      throw AppError.badRequest(
+        'invalid_Payload',
+      );
+    }
+    next();
 };
