@@ -1,12 +1,14 @@
 import pino from 'pino';
 
-enum LEVEL {
+// TODO: check if log levels should be 10, 20
+export enum LEVEL {
   FATAL = 'fatal',
   ERROR = 'error',
   WARN = 'warn',
   INFO = 'info',
   DEBUG = 'debug',
   TRACE = 'trace',
+  SILENT = 'silent'
 }
 
 export const initPinoLogger = (name: string): pino.Logger =>

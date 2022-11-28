@@ -7,8 +7,9 @@
   "scripts": {
     "lint": "eslint 'src/**/*' 'tests/**/*' --ext .js,.ts --fix && yarn format && tsc --noemit",
     "build": "tsc --project ./",
-    "start:dev": "nodemon ./src/app.ts | yarn pino-pretty",
-    "start:prod": "node dist/server.js",
+    "start:local": "ENVIRONMENT=local nodemon ./src/app.ts | yarn pino-pretty",
+    "start:dev": "ENVIRONMENT=dev node dist/server.js",
+    "start:prod": "ENVIRONMENT=prod node dist/server.js",
     "test": "yarn lint && jest --verbose"
   },
   "dependencies": {

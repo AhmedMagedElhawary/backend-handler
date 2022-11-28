@@ -7,6 +7,9 @@ import { smokeTestHandler } from './api/smokeTest';
 import { config } from '../config';
 import { errorHandler } from './middleware/errorHandler';
 import appRouter from './router/appRouter';
+import { initPinoLogger } from './framework/logger';
+
+const logger = initPinoLogger("app");
 
 const app = express();
 
@@ -25,7 +28,7 @@ app.use('/', appRouter);
 app.use(errorHandler);
 
 app.listen(config.port, () => {
-  //  logger.info(`listening on port ${config.port}!`);
+  logger.info(`listening on port ${config.port}!`);
 });
 
 // TODO: install jest ts-jest @types/jest and update scripts
