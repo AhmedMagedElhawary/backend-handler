@@ -1,4 +1,5 @@
 import pino from 'pino';
+import { config } from '../../config';
 
 // TODO: check if log levels should be 10, 20
 export enum LEVEL {
@@ -17,7 +18,7 @@ export const initPinoLogger = (name: string): pino.Logger =>
     formatters: {
       level: (level) => ({ level }),
     },
-    level: LEVEL.DEBUG,
+    level: config.logLevel,
     base: {},
     timestamp: pino.stdTimeFunctions.isoTime,
     redact: [

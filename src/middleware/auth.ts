@@ -7,7 +7,7 @@ const logger = initPinoLogger("AUTH");
 const auth = (req: Request, _res: Response, next: NextFunction): void => {
   const passedAPIKey = req.header("x-api-key");
 
-  if (passedAPIKey !== "testAPIKey") {
+  if (passedAPIKey === "testAPIKey") {
     logger.debug({
       message: "Authenticated",
       ...req.logTags,
