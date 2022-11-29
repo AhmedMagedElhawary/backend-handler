@@ -1,10 +1,19 @@
-import { LEVEL } from "./src/framework/logger";
+// TODO: check if log levels should be 10, 20
+enum LEVEL {
+  FATAL = 'fatal',
+  ERROR = 'error',
+  WARN = 'warn',
+  INFO = 'info',
+  DEBUG = 'debug',
+  TRACE = 'trace',
+  SILENT = 'silent'
+}
 
 export type Environment = 'local' | 'test' |'dev' | 'prod';
 
 interface Config {
   environment: Environment;
-  logLevel: LEVEL;
+  logLevel: LEVEL | string;
   name: string;
   port?: number;
 }
@@ -17,8 +26,8 @@ const configs: Record<Environment, () => Omit<Config, 'environment'>> = {
   }),
 
   test: () => ({
-    ...configs.local(),
-    logLevel: LEVEL.SILENT,
+     ...configs.local(),
+     logLevel: LEVEL.SILENT,
   }),
 
   dev: () => ({
