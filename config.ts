@@ -6,10 +6,10 @@ enum LEVEL {
   INFO = 'info',
   DEBUG = 'debug',
   TRACE = 'trace',
-  SILENT = 'silent'
+  SILENT = 'silent',
 }
 
-export type Environment = 'local' | 'test' |'dev' | 'prod';
+export type Environment = 'local' | 'test' | 'dev' | 'prod';
 
 interface Config {
   environment: Environment;
@@ -26,8 +26,8 @@ const configs: Record<Environment, () => Omit<Config, 'environment'>> = {
   }),
 
   test: () => ({
-     ...configs.local(),
-     logLevel: LEVEL.SILENT,
+    ...configs.local(),
+    logLevel: LEVEL.SILENT,
   }),
 
   dev: () => ({
@@ -42,7 +42,7 @@ const configs: Record<Environment, () => Omit<Config, 'environment'>> = {
   }),
 };
 
-const environment : Environment  = process.env.ENVIRONMENT as Environment
+const environment: Environment = process.env.ENVIRONMENT as Environment;
 
 export const config: Config = {
   ...configs[environment](),

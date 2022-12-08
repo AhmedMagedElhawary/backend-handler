@@ -10,7 +10,5 @@ export const initPinoLogger = (name: string): pino.Logger =>
     level: config.logLevel,
     base: {},
     timestamp: pino.stdTimeFunctions.isoTime,
-    redact: [
-      'req.headers.authorization',
-    ],
+    redact: ['req.headers.authorization'],
   });

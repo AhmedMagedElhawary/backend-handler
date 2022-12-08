@@ -26,6 +26,5 @@ app.use(errorHandler);
 
 export default app;
 
-// TODO: install jest ts-jest @types/jest and update scripts
 // TODO: install husky
-// TODO: check  "pino-pretty" , "prettier"
+// TODO: fix lint issues, remove format from the script and include it in lint

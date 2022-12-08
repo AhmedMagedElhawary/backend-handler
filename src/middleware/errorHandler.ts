@@ -29,7 +29,6 @@ function errorHandler(
     return res.status(err.status).json(message);
   }
 
-
   // logger.error({
   //   message: `Unhandled error occurred with error message: ${message}.`,
   //   stack: err.stack,

@@ -1,20 +1,20 @@
-import { NextFunction, Request, Response } from "express";
-import { initPinoLogger } from "../framework/logger";
-import { AppError } from "../framework/appError";
+import { NextFunction, Request, Response } from 'express';
+import { initPinoLogger } from '../framework/logger';
+import { AppError } from '../framework/appError';
 
-const logger = initPinoLogger("AUTH");
+const logger = initPinoLogger('AUTH');
 
 const auth = (req: Request, _res: Response, next: NextFunction): void => {
-  const passedAPIKey = req.header("x-api-key");
+  const passedAPIKey = req.header('x-api-key');
 
-  if (passedAPIKey === "testAPIKey") {
+  if (passedAPIKey === 'testAPIKey') {
     logger.debug({
-      message: "Authenticated",
+      message: 'Authenticated',
       ...req.logTags,
     });
     next();
   } else {
-    throw AppError.unauthorized("UNAUTHORIZED_ERROR");
+    throw AppError.unauthorized('UNAUTHORIZED_ERROR');
   }
 };
 

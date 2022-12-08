@@ -6,11 +6,12 @@
   "author": "Mego <a.elhawary1987@gmail.com>",
   "scripts": {
     "lint": "eslint 'src/**/*' '__tests__/**/*' --ext .js,.ts --fix && yarn format && tsc --noemit",
+    "format": "prettier --write *.ts src/* __tests__/*",
     "build": "tsc --project ./",
     "start:local": "ENVIRONMENT=local nodemon ./src/server.ts | yarn pino-pretty",
     "start:dev": "ENVIRONMENT=dev node dist/server.js",
     "start:prod": "ENVIRONMENT=prod node dist/server.js",
-    "test": "ENVIRONMENT=test yarn jest"
+    "test": "ENVIRONMENT=test jest"
   },
   "dependencies": {
     "express": "^4.18.2",

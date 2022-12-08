@@ -12,11 +12,6 @@ const router = Router();
 
 router.use(logTagsSetter, auth);
 
-router.get(
-  '/path1',
-  path1Validator,
-  wrapAsync(path1Handler),
-);
-
+router.get('/path1', path1Validator, wrapAsync(path1Handler));
 
 export default router;

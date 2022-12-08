@@ -1,22 +1,20 @@
-import { Request, Response } from "express";
-import { initPinoLogger } from "../framework/logger";
+import { Request, Response } from 'express';
+import { initPinoLogger } from '../framework/logger';
 
-const logger = initPinoLogger("path1Handler");
+const logger = initPinoLogger('path1Handler');
 
 export const path1Handler = async (req: Request, res: Response) => {
   const path1HandlerRequest = {}; // caste the request details here to strong type
   logger.info({
-    message: "processing request",
+    message: 'processing request',
     path1HandlerRequest,
     ...req.logTags,
   });
 
-  const path1HandlerResponse = await processPath1Request(
-    path1HandlerRequest
-  );
+  const path1HandlerResponse = await processPath1Request(path1HandlerRequest);
 
   logger.info({
-    message: "request completed",
+    message: 'request completed',
     path1HandlerResponse,
     ...req.logTags,
   });
@@ -24,12 +22,12 @@ export const path1Handler = async (req: Request, res: Response) => {
 };
 
 export const processPath1Request = async (
-  _path1Request: unknown
+  _path1Request: unknown,
 ): Promise<unknown> => {
   /***
    * Add logic here
    */
   await Promise.all([]); // TODO: Replace with logic async calls
-  const path1Response = "Hello World !";
+  const path1Response = 'Hello World !';
   return path1Response;
 };
