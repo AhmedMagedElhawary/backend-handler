@@ -1,10 +1,10 @@
-import { AppError } from '../framework/appError';
 import { Request, Response, NextFunction } from 'express';
+import { AppError } from '../framework/appError';
 import { initPinoLogger } from '../framework/logger';
 
 const logger = initPinoLogger('VALIDATOR');
 
-//TODO: read about validation
+// TODO: read about validation
 export const path1Validator = (
   req: Request,
   _res: Response,

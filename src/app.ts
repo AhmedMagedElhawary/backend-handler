@@ -10,7 +10,7 @@ import appRouter from './router/appRouter';
 
 const app = express();
 
-//TODO : add support for swagger
+// TODO : add support for swagger
 // app.use(
 //   '/api-docs',
 //   swaggerUi.serve,
