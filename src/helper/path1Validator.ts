@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { AppError } from '../framework/appError';
 import { initPinoLogger } from '../framework/logger';
 
@@ -10,7 +10,7 @@ export const path1Validator = (
   _res: Response,
   next: NextFunction,
 ) => {
-  // const {isValid} = req.params.
+  // Const {isValid} = req.params.
   const isValid = true; // TODO: add payload checking
 
   if (!isValid) {

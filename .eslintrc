@@ -5,7 +5,7 @@
     },
     "parser": "@babel/eslint-parser",
     "extends": [
-        "prettier"
+        "eslint:all"
     ],
     //  "extends": ["eslint:recommended", "airbnb-base", "prettier", "plugin:node/recommended"],
     "overrides": [

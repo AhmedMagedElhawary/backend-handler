@@ -6,9 +6,19 @@ export enum ErrorType {
   INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR',
 }
 
+export enum ErrorCodes {
+  NOT_FOUND = 404,
+  BAD_REQUEST = 400,
+  FORBIDDEN = 403,
+  UNAUTHORIZED = 401,
+  INTERNAL_SERVER_ERROR = 500,
+}
+
 export class AppError extends Error {
   status: number;
+
   errorType: ErrorType;
+
   message: string;
 
   constructor({

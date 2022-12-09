@@ -4,7 +4,7 @@ import { initPinoLogger } from '../framework/logger';
 const logger = initPinoLogger('path1Handler');
 
 export const path1Handler = async (req: Request, res: Response) => {
-  const path1HandlerRequest = {}; // caste the request details here to strong type
+  const path1HandlerRequest = {}; // Caste the request details here to strong type
   logger.info({
     message: 'processing request',
     path1HandlerRequest,
@@ -24,7 +24,8 @@ export const path1Handler = async (req: Request, res: Response) => {
 export const processPath1Request = async (
   _path1Request: unknown,
 ): Promise<unknown> => {
-  /***
+  /**
+   * *
    * Add logic here
    */
   await Promise.all([]); // TODO: Replace with logic async calls
