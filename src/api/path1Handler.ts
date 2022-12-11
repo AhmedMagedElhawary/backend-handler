@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { initPinoLogger } from '../framework/logger';
+import { Request, Response } from 'express';
 
 const logger = initPinoLogger('path1Handler');
 

@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from 'express';
-import { initPinoLogger } from '../framework/logger';
 import { AppError } from '../framework/appError';
+import { initPinoLogger } from '../framework/logger';
+import { NextFunction, Request, Response } from 'express';
 
 const logger = initPinoLogger('AUTH'),
   auth = (req: Request, _res: Response, next: NextFunction): void => {

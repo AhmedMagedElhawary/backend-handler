@@ -1,11 +1,9 @@
-import { Router } from 'express';
-
-import { wrapAsync } from '../middleware/wrapAsync';
-
-import auth from '../middleware/auth';
 import { path1Handler } from '../api/path1Handler';
 import { path1Validator } from '../helper/path1Validator';
+import auth from '../middleware/auth';
 import logTagsSetter from '../middleware/logTagsSetter';
+import { wrapAsync } from '../middleware/wrapAsync';
+import { Router } from 'express';
 
 /* eslint-disable new-cap */
 const router = Router();

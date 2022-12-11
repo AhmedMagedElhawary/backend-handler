@@ -1,15 +1,12 @@
-import express from 'express';
-
 /*
  * Import swaggerUi from 'swagger-ui-express';
  * import YAML from 'yamljs';
  */
-
 import { healthCheckHandler } from './api/healthCheck';
 import { smokeTestHandler } from './api/smokeTest';
-
 import { errorHandler } from './middleware/errorHandler';
 import appRouter from './router/appRouter';
+import express from 'express';
 
 const app = express();
 

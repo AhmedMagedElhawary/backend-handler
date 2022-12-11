@@ -1,8 +1,8 @@
-import request from 'supertest';
-import qs from 'qs';
 import { processPath1Request } from '../../../src/api/path1Handler';
 import app from '../../../src/app';
 import { ErrorCodes } from '../../../src/framework/appError';
+import qs from 'qs';
+import request from 'supertest';
 
 const agent = request.agent(app);
 

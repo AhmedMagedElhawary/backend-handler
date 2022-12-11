@@ -1,6 +1,6 @@
 import { config } from '../config';
-import { initPinoLogger } from './framework/logger';
 import app from './app';
+import { initPinoLogger } from './framework/logger';
 
 const logger = initPinoLogger('server');
 
