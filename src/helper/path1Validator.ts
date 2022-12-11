@@ -4,14 +4,16 @@ import { NextFunction, Request, Response } from 'express';
 
 const logger = initPinoLogger('VALIDATOR');
 
-// TODO: read about validation
 export const path1Validator = (
   req: Request,
   _res: Response,
   next: NextFunction,
 ) => {
-  // Const {isValid} = req.params.
-  const isValid = true; // TODO: add payload checking
+  /*
+   * Const {isValid} = req.params.
+   * Add payload checking
+   */
+  const isValid = true;
 
   if (!isValid) {
     throw AppError.badRequest('invalid_Payload');

@@ -12,10 +12,25 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'sort-keys-fix', 'prettier'],
   rules: {
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+    'func-style': 'off',
+    'max-params': 'off',
+    'no-magic-numbers': 'off',
+    'no-shadow': 'off',
+    'no-unused-vars': 'off',
+    'one-var': 'off',
     'prettier/prettier': 'error',
     'quote-props': ['error', 'as-needed'],
     quotes: ['error', 'single'],
-    'sort-imports': ['off'],
-    'sort-keys-fix/sort-keys-fix': 'warn',
+    'sort-imports': 'off',
+    'sort-keys-fix/sort-keys-fix': 'error',
+    'sort-vars': 'off',
   },
 };

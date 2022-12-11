@@ -3,13 +3,13 @@ import { NextFunction, Request, Response } from 'express';
 
 function errorHandler(
   err: Error,
-  req: Request,
+  _req: Request,
   res: Response,
   _next: NextFunction,
 ): Response {
-  let message;
+  let message = '';
   if (err.message) {
-    message = err.message;
+    ({ message } = err);
   } else if (typeof err === 'string') {
     message = err;
   } else {

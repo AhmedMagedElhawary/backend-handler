@@ -1,6 +1,5 @@
 import { processPath1Request } from '../../../src/api/path1Handler';
 import app from '../../../src/app';
-import { ErrorCodes } from '../../../src/framework/appError';
 import qs from 'qs';
 import request from 'supertest';
 
@@ -11,7 +10,7 @@ describe('path1Handler()', () => {
     const path1Request = {},
       response = await agent.get('/path1').query(qs.stringify(path1Request));
 
-    expect(response.status).toBe(ErrorCodes.UNAUTHORIZED);
+    expect(response.status).toBe(401);
   });
 
   it('should return status 200 if key was passed', async () => {

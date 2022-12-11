@@ -31,4 +31,5 @@ export default app;
 /*
  * TODO: install husky
  * TODO: fix lint issues, remove format from the script and include it in lint
+ * TODO: read about validation
  */
