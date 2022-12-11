@@ -17,5 +17,9 @@
     "plugins": [
     ],
     "rules": {
+        //  "prettier/prettier": "error",
+        "quotes": ["error", "single"]
+        //  "prettier/prettier": ["error", { "singleQuote": true }] //,
+        //  "quotes": ["error", "single", { "avoidEscape": false }]
     }
 }
