@@ -29,7 +29,11 @@ app.use(errorHandler);
 export default app;
 
 /*
- * TODO: install husky
- * TODO: fix lint issues, remove format from the script and include it in lint
- * TODO: read about validation
+ * TODO list
+ * Install husky
+ * Enable swagger
+ * Read about schema validation
+ * Read about wrap async
+ * Read about function format
+ * Check all off rules under eslint
  */
