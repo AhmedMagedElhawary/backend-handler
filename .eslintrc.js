@@ -15,13 +15,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'quote-props': ['error', 'as-needed'],
     quotes: ['error', 'single'],
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        memberSyntaxSortOrder: ['all'],
-      },
-    ],
+    'sort-imports': ['off'],
     'sort-keys-fix/sort-keys-fix': 'warn',
   },
 };

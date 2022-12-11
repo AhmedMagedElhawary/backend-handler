@@ -7,11 +7,11 @@ const logTagsSetter = (
 ): void => {
   req.logTags = {
     endPoint: `${req.baseUrl}${req.path}`,
-    userAgent: req.headers['user-agent'],
     http: {
       method: req.method,
       status_code: 200,
     },
+    userAgent: req.headers['user-agent'],
   };
   next();
 };
