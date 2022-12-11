@@ -5,19 +5,21 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
+        "eslint:all", // recommended
         "plugin:@typescript-eslint/recommended",
-        //  "eslint:all"
     ],
-    "overrides": [
-    ],
+    "overrides": [],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "sort-keys-fix"
     ],
     "rules": {
+        "quotes": [2, "single"],
+        "quote-props": [2, "as-needed"],
+        "sort-keys-fix/sort-keys-fix": "warn",
     }
-}
+};
