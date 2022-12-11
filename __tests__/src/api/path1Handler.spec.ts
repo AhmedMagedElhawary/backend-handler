@@ -2,7 +2,7 @@ import request from 'supertest';
 import qs from 'qs';
 import { processPath1Request } from '../../../src/api/path1Handler';
 import app from '../../../src/app';
-import { AppError, ErrorCodes } from '../../../src/framework/appError';
+import { ErrorCodes } from '../../../src/framework/appError';
 
 const agent = request.agent(app);
 
