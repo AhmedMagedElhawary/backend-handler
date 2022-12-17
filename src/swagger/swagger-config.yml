@@ -1,0 +1,108 @@
+openapi: 3.0.3
+servers:
+  - description: local
+    url: http://localhost:8080
+  # - description: development
+  #   url: https://
+  # - description: production
+  #   url: https://
+  version: '1.0.0'
+  title: backend-handler
+  description: >-
+    This is just a demo.
+  contact:
+    name: Mego
+    email: a.elhawary1987@gmail.com
+security:
+  - application: []
+paths:
+  /health:
+    get:
+      summary: Server heartbeat operation.
+      description: >-
+        Check the status of the application.
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+
+  /path1:
+    get:
+      summary: path1
+      description: >-
+        This API is for path1.
+      parameters:
+        - in: header
+          name: x-api-key
+          description: Secret key for auth.
+          schema:
+            type: string
+      # requestBody:
+      #   description: Validate job ad
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/XXXX'
+      responses:
+        '200':
+          description: Responses for 200
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/path1Response'
+              examples:
+                ok:
+                  summary: valid reply
+                  value:
+                    "Hello World !"
+        '401':
+          $ref: '#/components/responses/UnAuthorizedError'
+ 
+        # '403':
+        #   $ref: '#/components/responses/ValidationError'
+
+        '500':
+          $ref: '#/components/responses/InterServerError'
+
+components:
+  schemas:
+    UnAuthorizedError:
+      description: Not authorized
+      content:
+        application/json:
+          schema:
+            type: string
+          examples:
+            error:
+              summary: No authorization in header found
+              value: UNAUTHORIZED_ERROR
+
+    InterServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: string
+          examples:
+            error:
+              summary: internal server error
+
+    path1Response:
+      description: path1 response
+      content:
+        application/json:
+          schema:
+            type: string
+
+  # securitySchemes:
+  #   application:
+  #     type: http
+  #     scheme: bearer
+  #     bearerFormat: JWT
