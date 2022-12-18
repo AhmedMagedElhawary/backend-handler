@@ -1,0 +1,13 @@
+.idea/*
+.vscode/*
+
+.cdk.staging/
+.serverless/
+cdk.out/
+node_modules*/
+
+/coverage*/
+/dist*/
+/lib*/
+/tmp*/
+/src/swagger*/
