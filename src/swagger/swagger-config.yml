@@ -1,4 +1,5 @@
 openapi: 3.0.3
+
 servers:
   - description: local
     url: http://localhost:8080
@@ -6,15 +7,16 @@ servers:
   #   url: https://
   # - description: production
   #   url: https://
-  version: '1.0.0'
-  title: backend-handler
-  description: >-
-    This is just a demo.
-  contact:
+  - version: '1.0.0'
+  - title: backend-handler
+  - description: >-
+      This API is for path1.
+  - contact:
     name: Mego
     email: a.elhawary1987@gmail.com
-security:
-  - application: []
+# security:
+#   - application: []
+
 paths:
   /health:
     get:
@@ -56,15 +58,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/path1Response'
+                $ref: '#/components/responses/path1Response'
               examples:
                 ok:
                   summary: valid reply
-                  value:
-                    "Hello World !"
+                  value: 'Hello World !'
+
         '401':
           $ref: '#/components/responses/UnAuthorizedError'
- 
+
         # '403':
         #   $ref: '#/components/responses/ValidationError'
 
@@ -72,7 +74,9 @@ paths:
           $ref: '#/components/responses/InterServerError'
 
 components:
-  schemas:
+  # schemas:
+
+  responses:
     UnAuthorizedError:
       description: Not authorized
       content:
