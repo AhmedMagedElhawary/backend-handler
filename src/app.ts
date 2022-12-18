@@ -25,9 +25,7 @@ export default app;
 /*
  * TODO list
  * Install husky
- * Enable swagger
  * Read about schema validation
  * Read about wrap async
  * Read about function format
- * Check all off rules under eslint
  */
