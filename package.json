@@ -14,6 +14,7 @@
     "start:local": "ENVIRONMENT=local nodemon ./src/server.ts | yarn pino-pretty",
     "start:dev": "ENVIRONMENT=dev node dist/server.js",
     "start:prod": "ENVIRONMENT=prod node dist/server.js",
+    "publish": "publish --access=public", 
     "test": "ENVIRONMENT=test jest"
   },
   "dependencies": {
