@@ -1,9 +1,12 @@
 {
-  "name": "backend-handler",
-  "version": "1.0.0",
+  "name": "@AhmedMagedElhawary/backend-handler",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "author": "Mego <a.elhawary1987@gmail.com>",
+  "repository": {
+    "url": "git://github.com/AhmedMagedElhawary/backend-handler.git."
+  },
   "scripts": {
     "lint": "eslint 'src/**/*' '__tests__/**/*' --fix && yarn format",
     "format": "prettier --write *.ts src/* __tests__/*",
